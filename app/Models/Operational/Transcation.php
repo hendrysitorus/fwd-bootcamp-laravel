@@ -33,4 +33,9 @@ class Transcation extends Model
         'deleted_at',
 
     ];
+
+    public function appointment()
+    {
+        return $this->belongsTo('App\Models\Operation\Appointment.php','appointment_id','id');
+    }
 }

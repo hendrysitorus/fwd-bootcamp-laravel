@@ -30,4 +30,18 @@ class Doctor extends Model
         'deleted_at',
 
     ];
+
+    // one to many
+    public function specialist()
+    {
+        return $this->belongsTo('App\Models\MasterData\Specialist.php','specialist_id','id');
+    }
+    // one to many
+    public function appointment()
+    {
+        return $this->hasMany('App\Models\Operation\Appontment.php','doctor_id');
+    }
+
+
+
 }

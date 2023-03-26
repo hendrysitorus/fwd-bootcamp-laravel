@@ -33,4 +33,27 @@ class Appointment extends Model
         'deleted_at',
 
     ];
+
+    public function doctor()
+    {
+        return $this->belongsTo('App\Models\Operation\Doctor.php','doctor_id','id');
+    }
+
+    public function consultation()
+    {
+        return $this->belongsTo('App\Models\MasterData\Consultation.php','consultation_id','id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User.php','user_id','id');
+    }
+
+
+    public function transaction()
+    {
+        return $this->hasOne('App\Models\Operational\Transcation.php','appointment_id');
+    }
+
+
 }

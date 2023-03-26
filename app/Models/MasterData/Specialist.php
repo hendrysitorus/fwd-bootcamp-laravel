@@ -28,4 +28,9 @@ class Specialist extends Model
         'deleted_at',
 
     ];
+
+    public function doctor()
+    {
+        return $this->hasMany('App\Models\Operation\Doctor.php','specialist_id');
+    }  
 }
