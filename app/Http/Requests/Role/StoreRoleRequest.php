@@ -2,7 +2,11 @@
 
 namespace App\Http\Requests\Role;
 
+
+use App\Models\ManagementAccess\Role; 
 use Illuminate\Foundation\Http\FormRequest;
+use Symfony\Component\HttpFoundation\Response; 
+
 
 class StoreRoleRequest extends FormRequest
 {
@@ -24,6 +28,10 @@ class StoreRoleRequest extends FormRequest
     public function rules()
     {
         return [
+            
+            'title' => [
+                'required', 'string', 'max:255',
+            ],
             //
         ];
     }
